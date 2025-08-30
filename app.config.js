@@ -3,7 +3,7 @@ const { version } = require('./package.json')
 const withAndroidAppThemeFullScreen = require('./plugins/withAndroidAppThemeFullScreen')
 const withCustomGradleProperties = require('./plugins/withCustomGradleProperties')
 
-const APP_REGISTRY_NAME = 'Valora'
+const APP_REGISTRY_NAME = 'COIL'
 
 // Firebase credentials
 const GOOGLE_SERVICE_INFO_PLIST =
@@ -30,9 +30,9 @@ module.exports = () => {
         }
       case 'mainnet-dev':
         return {
-          name: 'Valora (dev)',
+          name: 'COIL Wallet (dev)',
           appStoreId: '1520414263',
-          bundleId: 'co.clabs.valora.dev',
+          bundleId: 'com.coil.wallet.dev',
           auth0Domain: 'auth.valora.xyz',
         }
       case 'mainnet-nightly':
@@ -54,7 +54,7 @@ module.exports = () => {
       name,
       slug: 'valora',
       // Main scheme should be first (see index.tsx)
-      scheme: ['celo', 'wc'],
+      scheme: ['coil', 'celo', 'wc'],
       version,
       orientation: 'portrait',
       icon: './assets/icon/icon.png',
@@ -71,7 +71,6 @@ module.exports = () => {
         },
         supportsTablet: false,
         bundleIdentifier: bundleId,
-        associatedDomains: ['applinks:vlra.app', 'applinks:valoraapp.com'],
         infoPlist: {
           NSCameraUsageDescription:
             'Connecting your camera allows you to scan codes for payments.',
@@ -89,9 +88,6 @@ module.exports = () => {
             'This app requires location access to provide location-based features.',
           CFBundleAllowMixedLocalizations: true,
           ITSAppUsesNonExemptEncryption: false,
-        },
-        entitlements: {
-          'aps-environment': 'production',
         },
         ...(firebaseEnabled && {
           googleServicesFile: GOOGLE_SERVICE_INFO_PLIST,
