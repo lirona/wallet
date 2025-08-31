@@ -47,9 +47,8 @@ const App = createApp({
         screens: [
           defaultTabs.wallet,
           defaultTabs.activity,
-          defaultTabs.discover,
         ],
-        initialScreen: 'activity',
+        initialScreen: 'wallet',
       }
     },
   },
