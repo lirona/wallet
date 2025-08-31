@@ -22,7 +22,14 @@ See also [deeplinks.md](./docs/deeplinks.md) for integrating with Valora using d
 
 ## Build Valora Locally
 
-To setup Valora locally, follow [setup instructions](./WALLET.md).
+To setup Valora locally:
+
+### IOS
+1. Run nvm use
+2. Run yarn install 
+3. Run yarn prebuild
+4. `cd ios && pod install`
+5. `cd ../ && yarn start`
 
 ## Repo Structure
 
